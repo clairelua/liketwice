@@ -76,7 +76,7 @@ SELECT AVG(amt) FROM (SELECT SUM(tx_amt) as amt FROM transactions WHERE tx_type 
 # Query 17) Purchase count of each shopper.
 SELECT userid, COUNT(*) as purchase_count FROM transactions WHERE tx_type = 'Purchase' GROUP BY userid;
 
-# Trendline data
+# Trendline data - Refer to LTR_predictions.xlsx
 # userid, first purchase amount, purchase count, ltr
 SELECT purchase_t.userid, purchase_t.tx_amt as first_amt, count_t.purchase_count, ltr_t.ltr FROM(
   SELECT userid, tx_time, tx_amt FROM transactions WHERE tx_type = 'Purchase'
